@@ -8,8 +8,8 @@ terraform {
 
 # Configure the TencentCloud Provider
 provider "tencentcloud" {
-  secret_id  = "AKIDZ0IAzd9gDWbS5TdZGivu2va1DHDvOuhM"
-  secret_key = "Wt3zhLlxud8PREm6C3e8QWP5ZqulPr68"
+ secret_id  = "my-secret-id"
+  secret_key = "my-secret-key"
   region     = "ap-guangzhou"
 }
 
