@@ -1,26 +1,13 @@
-terraform {
-  required_providers {
-    tencentcloud = {
-      source = "tencentcloudstack/tencentcloud"
-    }
-  }
-}
-# terraform {
-#   backend "cos" {
-#     region = "ap-guangzhou"
-#     bucket = "terraform-state-1314895130"
-#     prefix = "terraform/state" # 远程存放目录
-#     encrypt = true
-#   }
-# }
-
 # Configure the TencentCloud Provider
 provider "tencentcloud" {
-  region     = "ap-guangzhou"
+  region     = var.region
+  secret_id = var.secret_id
+  secret_key = var.secret_key
 }
 
 # Get availability zones
-data "tencentcloud_availability_zones" "default" {}
+data "tencentcloud_availability_zones" "default" {
+}
 
 # Get availability images
 data "tencentcloud_images" "default" {
@@ -45,6 +32,7 @@ resource "tencentcloud_instance" "web" {
   internet_max_bandwidth_out = 20
   security_groups            = [tencentcloud_security_group.default.id]
   count                      = 1
+  password = var.password
 }
 
 # Create security group
@@ -72,15 +60,3 @@ resource "tencentcloud_security_group_rule" "ssh" {
   port_range        = "22"
   policy            = "accept"
 }
-
-# data "tencentcloud_user_info" "info" {}
-
-# locals {
-#   app_id = data.tencentcloud_user_info.info.app_id
-# }
-
-# resource "tencentcloud_cos_bucket" "private_bucket" {
-#   bucket = "terraform-state-${local.app_id}"
-#   acl    = "private"
-#   encryption_algorithm = "AES256"
-# }
