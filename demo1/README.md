@@ -31,8 +31,8 @@ $ export TENCENTCLOUD_SECRET_ID="my-secret-id"
 $ export TENCENTCLOUD_SECRET_KEY="my-secret-key"
 $ export TENCENTCLOUD_REGION="ap-guangzhou"
   ```
-2. 执行
- ``` hashicorp
+2. 下载依赖
+ ``` shell
 terraform init
   ```
 ![image](images/init.jpg)
@@ -40,7 +40,7 @@ terraform init
 ### 5.创建执行计划
  可以查看添加、删除了那些资源等等。
 1. 执行
- ``` hashicorp
+ ``` shell
 terraform plan
   ```
 ![image](images/plan.jpg)
@@ -48,7 +48,7 @@ terraform plan
 ### 6.创建资源
 
 1. 执行
- ``` hashicorp
+ ``` shell
 terraform apply -auto-approve
   ```
 ![image](images/apply.jpg)
@@ -62,7 +62,7 @@ terraform apply -auto-approve
  如果不需要使用了，那么就建议删除掉
 
 1. 执行
- ``` hashicorp
+ ``` shell
 terraform destroy -auto-approve
   ```
 ![image](images/destroy.jpg)
