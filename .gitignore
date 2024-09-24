@@ -1,4 +1,2 @@
-demo1/.terraform/
-demo1/*.tfstate*
-demo2/.terraform/
-demo2/*.tfstate*
+*/.terraform/
+*/*.tfstate*
