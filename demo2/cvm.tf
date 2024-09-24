@@ -4,6 +4,12 @@ terraform {
       source = "tencentcloudstack/tencentcloud"
     }
   }
+  cloud { 
+    organization = "huhouhua" 
+    workspaces { 
+      name = "test" 
+    } 
+}
 }
 # Configure the TencentCloud Provider
 provider "tencentcloud" {
