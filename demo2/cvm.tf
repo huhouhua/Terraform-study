@@ -62,6 +62,3 @@ resource "tencentcloud_security_group_rule" "ssh" {
   port_range        = "22"
   policy            = "accept"
 }
-
-# SecretId:AKIDuiNziQ0W3aBrRuIlM5jMvMclgUAvcI4o
-# SecretKey:0wuvtoeKqMpBThqy35zjMp9MSSM9rTzP
