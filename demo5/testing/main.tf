@@ -13,5 +13,5 @@ module "k3s" {
 
 resource "local_sensitive_file" "kubeconfig" {
   content  = module.k3s.kube_config
-  filename = "${path.module}/config.yaml"
+  filename = "${path.module}/kubeconfig_testing.yaml"
 }
